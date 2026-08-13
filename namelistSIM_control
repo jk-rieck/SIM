@@ -5,9 +5,9 @@
     regularization = 'tanh'
     ini_guess = 'previous time step'
     adv_scheme = 'upwind'
-    Airtemp = 'MonthlyMean'
-    OcnTemp = 'calculated'
-    Wind = '6hours'
+    Airtemp = 'specified'
+    OcnTemp = 'specified'
+    Wind = 'specified'
     RampupWind = .false.
     RampupForcing = .False.
     Current = 'YearlyMean'
