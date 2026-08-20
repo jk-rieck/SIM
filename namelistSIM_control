@@ -10,7 +10,7 @@
     Wind = 'specified'
     RampupWind = .false.
     RampupForcing = .False.
-    Current = 'YearlyMean'
+    Current = 'specified'
     Periodic_x = 0
     Periodic_y = 0
     ideal = .false.
