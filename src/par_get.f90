@@ -138,9 +138,7 @@
 
       if ( ( .not. uniaxial ) .and. ( .not. ideal_bridge ) ) then
          if    ( ( Deltax == 80d03 ) .or. ( Deltax == 40d03 ) .or. & 
-               & ( Deltax == 20d03 ) .or. ( Deltax == 10d03 ) .or. &
-               & ( Deltax == 5d03 ) .or. ( Deltax == 2.5d03 ) .or. &
-               & ( Deltax == 1.25d03 ) ) then          ! old grids
+               & ( Deltax == 20d03 ) .or. ( Deltax == 10d03 ) ) then          ! old grids
             dx_pole = 2480d03 + (80d03 - (Deltax / 2)) ! distance of pole from
             dy_pole = 2240d03 + (80d03 - (Deltax / 2)) ! tracer point of cell 0,0
          elseif ( ( Deltax == 32d03 ) .or. ( Deltax == 16d03 ) .or. & 
@@ -611,9 +609,7 @@ subroutine read_namelist
           write(cnx, '(I0)') int(nx)
           write(cny, '(I0)') int(ny)
           if  ( ( Deltax == 80d03 ) .or. ( Deltax == 40d03 ) .or. &
-              & ( Deltax == 20d03 ) .or. ( Deltax == 10d03 ) .or. &
-              & ( Deltax == 5d03 ) .or. ( Deltax == 2.5d03 ) .or. &
-              & ( Deltax == 1.25d03 ) ) then
+              & ( Deltax == 20d03 ) .or. ( Deltax == 10d03 ) ) then
               open (unit = 20, file = 'src/mask'//cdelta//'.dat', status = 'old')
           elseif ( ( Deltax == 32d03 ) .or. ( Deltax == 16d03 ) .or. &
                 & ( Deltax == 8d03 )  .or. ( Deltax == 4d03 ) .or. &
