@@ -267,6 +267,7 @@ CONTAINS
            CALL read_array(32, temp(:,:,month+1))
            WHERE (temp(:,:,month+1) <= -4) temp(:,:,month+1) = -9999.
            CLOSE(32)
+       endif
     END DO
 
 
