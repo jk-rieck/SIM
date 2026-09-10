@@ -20,6 +20,8 @@ MODULE IO
 
   IMPLICIT NONE
 
+  include 'parameter.h'
+
   INTEGER, PARAMETER :: RP = SELECTED_REAL_KIND(12)
   INTEGER :: STD_OUT = 6    ! Default standard output
   INTEGER :: LOG_OUT = 9    ! Log
@@ -261,8 +263,8 @@ CONTAINS
            & ( Deltax == 8d03 )  .or. ( Deltax == 4d03 ) .or. &
            & ( Deltax == 2d03 )  .or. ( Deltax == 1d03 ) ) then
            write(cdelta, '(F0.2)') Deltax/1d03
-           name = dir // 'Tocn' // cmonth // ' _dx' // trim(cdelta) &
-               & // '_nx' // trim(cnx) // '_ny' // trim(cny)//
+           name = dir // 'Tocn' // cmonth // '_dx' // trim(cdelta) &
+               & // '_nx' // trim(cnx) // '_ny' // trim(cny)
            OPEN(unit=32, file=TRIM(name), status='old')
            CALL read_array(32, temp(:,:,month+1))
            WHERE (temp(:,:,month+1) <= -4) temp(:,:,month+1) = -9999.

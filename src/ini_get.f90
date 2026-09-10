@@ -35,6 +35,11 @@ subroutine ini_get (restart, expno_r, restart_date)
 
     if ( restart .eq. 0 ) then
 
+       if (uniaxial) then
+          lbx = (nx/5) + 1
+          ubx = nx - (nx/5)
+       endif
+
        do i = 0, nx+1
           do j = 0, ny+1               
 !
@@ -55,9 +60,7 @@ subroutine ini_get (restart, expno_r, restart_date)
              endif
 
 !     Uniaxial loading experiment: set bands of open water at the top and sides
-             if uniaxial then
-                lbx = NINT(nx/5) + 1
-                ubx = nx - NINT(nx/5)
+             if (uniaxial) then
                 if (i .lt. lbx .or. i .gt. ubx) h(i,j) = 0d0
                 if (i .lt. lbx .or. i .gt. ubx) A(i,j) = 0d0
                 if (j .gt. ny) h(i,j) = 0d0

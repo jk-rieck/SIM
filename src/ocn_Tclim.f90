@@ -66,8 +66,8 @@
                 & ( Deltax == 8d03 )  .or. ( Deltax == 4d03 ) .or. &
                 & ( Deltax == 2d03 )  .or. ( Deltax == 1d03 ) ) then
                 write(cdelta, '(F0.2)') Deltax/1d03
-                fname1 = dir // 'Tocn' // cmonth // ' _dx' // trim(cdelta) &
-                    & // '_nx' // trim(cnx) // '_ny' // trim(cny)//
+                fname1 = dir // 'Tocn' // cmonth // '_dx' // trim(cdelta) &
+                    & // '_nx' // trim(cnx) // '_ny' // trim(cny)
             endif
 
             open(unit = 30, file = fname1, status = 'unknown')
