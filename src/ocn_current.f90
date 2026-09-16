@@ -62,9 +62,9 @@
              & ( Deltax == 8d03 )  .or. ( Deltax == 4d03 ) .or. &
              & ( Deltax == 2d03 )  .or. ( Deltax == 1d03 ) ) then
              write(cdelta, '(F0.2)') Deltax/1d03
-             fname1 = dir // 'uwater' // ' _dx' // trim(cdelta) // '_nx' &
+             fname1 = dir // 'uwater' // '_dx' // trim(cdelta) // '_nx' &
                     & // trim(cnx) // '_ny' // trim(cny)// '.clim'
-             fname2 = dir // 'vwater' // ' _dx' // trim(cdelta) // '_nx' &
+             fname2 = dir // 'vwater' // '_dx' // trim(cdelta) // '_nx' &
                     & // trim(cnx) // '_ny' // trim(cny)// '.clim'
          endif
       endif

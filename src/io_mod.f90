@@ -179,9 +179,9 @@ CONTAINS
         & ( Deltax == 8d03 )  .or. ( Deltax == 4d03 ) .or. &
         & ( Deltax == 2d03 )  .or. ( Deltax == 1d03 ) ) then
         write(cdelta, '(F0.2)') Deltax/1d03
-        name_u = dir // 'uwater' // ' _dx' // trim(cdelta) // '_nx' &
+        name_u = dir // 'uwater_dx' // trim(cdelta) // '_nx' &
                & // trim(cnx) // '_ny' // trim(cny)// '.clim'
-        name_v = dir // 'vwater' // ' _dx' // trim(cdelta) // '_nx' &
+        name_v = dir // 'vwater_dx' // trim(cdelta) // '_nx' &
                & // trim(cnx) // '_ny' // trim(cny)// '.clim'
     endif
 
@@ -669,7 +669,6 @@ CONTAINS
                 & // '_nx' // trim(cnx) // '_ny' // trim(cny) // '.nc'
       endif
 
-      
       CALL check( nf90_open(file_name, NF90_NOWRITE, ncid) )
 
       ! Get the variable ids
