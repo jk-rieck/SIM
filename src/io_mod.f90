@@ -392,8 +392,10 @@ CONTAINS
 
       ! Check that the wind arrays have the right shape. 
       CALL nxny(delta, nx, ny)
-      IF ( nx /= SIZE(u,1)-2) STOP
-      IF ( ny /= SIZE(u,2)-2) STOP
+      write(*,*) "nx=",nx," SIZE(u,1)=",SIZE(u,1)
+      write(*,*) "ny=",ny," SIZE(u,2)=",SIZE(u,2)
+      IF ( nx /= SIZE(u,1)-3) STOP
+      IF ( ny /= SIZE(u,2)-3) STOP
       write(cnx, '(I0)') int(nx)
       write(cny, '(I0)') int(ny)
 
@@ -408,7 +410,6 @@ CONTAINS
           file_name = dir // 'wind_dx' // trim(cdelta) // '_nx' &
                & // trim(cnx) // '_ny' // trim(cny)// '.nc'
       endif
-
 
       ! Open the file. 
       CALL check( nf90_open(FILE_NAME, NF90_NOWRITE, ncid) )
@@ -674,22 +675,23 @@ CONTAINS
       ! Get the variable ids
       CALL check( nf90_inq_varid(ncid, "air", air_id) )
       CALL check( nf90_inq_varid(ncid, "time", time_id) )
-  
+      
       ! Get the time dimension id
       CALL check( nf90_inq_dimid(ncid, 'time', time_dim_id) )
       CALL check( nf90_inquire_dimension(ncid, time_dim_id, len=time_dim) )
-
+      
       ! Get the time variable
       ALLOCATE(times(time_dim))
       CALL check(nf90_get_var(ncid, time_id, times) )
-
+      
       ! Compute the time index corresponding to the given date
       time = INT(hours(dtstart - since))
       time_index = find(times, time)
+      write(*,*) "time=",time," time_index=",time_index
 
       start = (/ 1,1,time_index /)
-      count = (/ nx+2, ny+2, 1 /)
-
+      count = (/ nx+1, ny+1, 1 /)
+      
       CALL check(nf90_get_var(ncid, air_id, Ta, start=start, count=count))
 
       CALL check( nf90_close(ncid) )
