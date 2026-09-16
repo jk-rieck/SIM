@@ -687,7 +687,6 @@ CONTAINS
       ! Compute the time index corresponding to the given date
       time = INT(hours(dtstart - since))
       time_index = find(times, time)
-      write(*,*) "time=",time," time_index=",time_index
 
       start = (/ 1,1,time_index /)
       count = (/ nx+1, ny+1, 1 /)
