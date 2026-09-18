@@ -5,12 +5,12 @@
     regularization = 'tanh'
     ini_guess = 'previous time step'
     adv_scheme = 'upwind'
-    Airtemp = 'specified'
-    OcnTemp = 'specified'
-    Wind = 'specified'
+    AirTemp = 'MonthlyMean'
+    OcnTemp = 'MonthlyClim'
+    Wind = '6hours'
     RampupWind = .false.
     RampupForcing = .False.
-    Current = 'specified'
+    Current = 'YearlyMean'
     Periodic_x = 0
     Periodic_y = 0
     ideal = .false.

@@ -37,7 +37,7 @@
       double precision uuair(0:nx+2,0:ny+2),uvair(0:nx+2,0:ny+2)
  
       logical :: verbose = .false.
-     
+
       delta =  int(deltax)/1000
 
       year = date%year

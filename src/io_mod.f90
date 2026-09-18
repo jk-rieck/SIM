@@ -392,8 +392,6 @@ CONTAINS
 
       ! Check that the wind arrays have the right shape. 
       CALL nxny(delta, nx, ny)
-      write(*,*) "nx=",nx," SIZE(u,1)=",SIZE(u,1)
-      write(*,*) "ny=",ny," SIZE(u,2)=",SIZE(u,2)
       IF ( nx /= SIZE(u,1)-3) STOP
       IF ( ny /= SIZE(u,2)-3) STOP
       write(cnx, '(I0)') int(nx)
@@ -426,7 +424,6 @@ CONTAINS
       start = (/ 1, 1,time_index /)
       count = (/ nx+1, ny+1, 1 /)
 
-      
       ! Get the variable id of uwnd and vwnd
       CALL check( nf90_inq_varid(ncid, "uwnd", u_id) )
       CALL check( nf90_inq_varid(ncid, "vwnd", v_id) )
