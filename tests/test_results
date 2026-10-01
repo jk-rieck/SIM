@@ -32,8 +32,8 @@ then
 fi
 # --- TEST 1 ------------------------------------------
 
-file1=${refcode}/TEST/OUTPUT/h2002_01_01_02_00.41
-file2=${newcode}/TEST/OUTPUT/h2002_01_01_02_00.41
+file1=${refcode}/TEST/OUTPUT/h2008_01_01_02_00.91
+file2=${newcode}/TEST/OUTPUT/h2008_01_01_02_00.91
 
 if cmp -s $file1 $file2
 then
@@ -44,8 +44,8 @@ fi
 
 # --- TEST 2 ------------------------------------------
 
-file1=${refcode}/TEST/OUTPUT/h2002_01_01_02_00.42
-file2=${newcode}/TEST/OUTPUT/h2002_01_01_02_00.42
+file1=${refcode}/TEST/OUTPUT/h2008_01_01_02_00.92
+file2=${newcode}/TEST/OUTPUT/h2008_01_01_02_00.92
 
 if cmp -s $file1 $file2
 then
@@ -56,8 +56,8 @@ fi
 
 # --- TEST 3 ------------------------------------------ 
 
-file1=${refcode}/TEST/OUTPUT/h2002_01_01_02_00.43
-file2=${newcode}/TEST/OUTPUT/h2002_01_01_02_00.43
+file1=${refcode}/TEST/OUTPUT/h2008_01_01_02_00.93
+file2=${newcode}/TEST/OUTPUT/h2008_01_01_02_00.93
 
 if cmp -s $file1 $file2
 then
@@ -68,8 +68,8 @@ fi
 
 # --- TEST 4 ------------------------------------------  
 
-file1=${refcode}/TEST/OUTPUT/h2002_01_01_02_00.44
-file2=${newcode}/TEST/OUTPUT/h2002_01_01_02_00.44
+file1=${refcode}/TEST/OUTPUT/h2008_01_01_02_00.94
+file2=${newcode}/TEST/OUTPUT/h2008_01_01_02_00.94
 
 if cmp -s $file1 $file2
 then
@@ -80,8 +80,8 @@ fi
 
 # --- TEST 5 ------------------------------------------        
 
-file1=${refcode}/TEST/OUTPUT/h1990_01_01_01_00.45
-file2=${newcode}/TEST/OUTPUT/h1990_01_01_01_00.45
+file1=${refcode}/TEST/OUTPUT/h2007_01_01_01_00.95
+file2=${newcode}/TEST/OUTPUT/h2007_01_01_01_00.95
 
 if cmp -s $file1 $file2
 then
@@ -92,8 +92,8 @@ fi
 
 # --- TEST 6: MEB standard ------------------------------------------        
 
-file1=${refcode}/TEST/OUTPUT/h1990_01_01_01_00.46
-file2=${newcode}/TEST/OUTPUT/h1990_01_01_01_00.46
+file1=${refcode}/TEST/OUTPUT/h2007_01_01_01_00.96
+file2=${newcode}/TEST/OUTPUT/h2007_01_01_01_00.96
 
 if cmp -s $file1 $file2
 then
