@@ -395,7 +395,7 @@ subroutine read_namelist
            Pstar, C, e_ratio, k1, k2, rhoair, rhoice, rhowater, &
            Cdair, Cdwater, f
 
-      filename ='namelistSIM'
+      filename = 'namelist'
       filenb = 10
 
       print *, 'Reading namelist values'
