@@ -53,5 +53,6 @@ config.log
 .sconf_temp
 
 # .ipynb checkpoints
-*/.ipynb_checkpoints/
+aux/.ipynb_checkpoints/
+docs/.ipynb_checkpoints/
 
