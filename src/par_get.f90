@@ -123,8 +123,8 @@
       Thermodyn  = .true.            ! ice model type
       BuoyTrack  = .false.
       Buoys      = 'Daily'           ! Buoy traj: 'Track' or 'Daily'
-      Current    = 'YearlyMean'      ! YearlyMean, specified
-      Wind       = '6hours'          ! 6hours, 60yrs_clim, specified
+      Current    = 'clim'            ! clim, specified
+      Wind       = '6hours'          ! 6hours, clim, specified
       RampupWind  = .false.          ! smooth increase in surface wind
       RampupForcing = .false.        ! smooth increase in surface wind forcing
       AirTemp    = 'MonthlyMean'     ! MonthlyMean, specified (-10C)
@@ -499,14 +499,14 @@ subroutine read_namelist
          stop
       endif
 
-      if ( Current .ne. 'YearlyMean' .and.                             &
+      if ( Current .ne. 'clim' .and.                                   &
            Current .ne. 'specified' ) then
          print *, 'Wrong Current chosen by user'
          stop
       endif
 
       if ( Wind .ne. '6hours' .and. Wind .ne. 'specified' .and.        &
-           Wind .ne. '60yrs_clim' ) then
+           Wind .ne. 'clim' ) then
          print *, 'Wrong Wind chosen by user'
          stop
       endif

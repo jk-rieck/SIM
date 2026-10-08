@@ -50,7 +50,7 @@
       fname1 = ''
       fname2 = ''
     
-      if ( Current .eq. 'YearlyMean' ) then
+      if ( Current .eq. 'clim' ) then
          write(cnx, '(I0)') int(nx)
          write(cny, '(I0)') int(ny)
          if  ( ( Deltax == 80d03 ) .or. ( Deltax == 40d03 ) .or. &
