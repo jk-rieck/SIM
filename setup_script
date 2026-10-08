@@ -4,3 +4,4 @@ cp scons_repo/SConstruct_Run SConstruct
 scons-3
 ln -s namelists/namelistSIM_control namelist
 ln -s inputfiles/input_norestart input
+mkdir -p output
